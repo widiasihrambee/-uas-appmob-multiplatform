@@ -1,3 +1,4 @@
+import 'package:appuas/components/custom_ListTile.dart';
 import 'package:appuas/model/article_model.dart';
 import 'package:appuas/services/api_service.dart';
 import 'package:flutter/material.dart';
@@ -27,10 +28,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Widiasih Rambe",
-            style: TextStyle(
-              color: Colors.white,
-            )),
+        title: Text(
+          "Widiasih Rambe",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Colors.blue,
       ),
       body: FutureBuilder(
@@ -42,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             return ListView.builder(
               itemCount: articles.length,
               itemBuilder: (context, index) =>
-                  customListTitle(articles[index], context),
+                  customListTile(articles[index], context),
             );
           }
 
