@@ -33,7 +33,7 @@ Widget customListTile(Article article, BuildContext context) {
             width: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage(article.urlToImage), fit: BoxFit.cover),
+                  image: NetworkImage(article.imageURL), fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(12.0),
             ),
           ),
@@ -46,6 +46,13 @@ Widget customListTile(Article article, BuildContext context) {
               fontWeight: FontWeight.bold,
               fontSize: 16.0,
             ),
+          ),
+          SizedBox(height: 4.0),
+          Text(
+            article.subtitle,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            style: TextStyle(fontSize: 16.0, color: Colors.black38),
           ),
         ],
       ),

@@ -4,21 +4,19 @@ import 'package:http/http.dart';
 import 'package:appuas/model/article_model.dart';
 
 class ApiService {
-  final endPointUrl =
-      "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=a50b21ac90d64660ba7570859f5301c8";
+  final endPointUrl = "https://jaroji.web.id/api/news.php";
 
   Future<List<Article>> getArticle() async {
     Response res = await get(endPointUrl);
-
     if (res.statusCode == 200) {
       Map<String, dynamic> json = jsonDecode(res.body);
-      List<dynamic> body = json['articles'];
-      List<Article> articles =
-          body.map((dynamic item) => Article.fromJson(item)).toList();
+      List<dynamic> body = json['berita'];
+      List<Article> article =
+          body.map((dynamic item) => Article.fromJSON(item)).toList();
 
-      return articles;
+      return article;
     } else {
-      throw ("Can't get the Articles");
+      throw Exception("${res.statusCode} Can't get the News");
     }
   }
 }

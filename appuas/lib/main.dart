@@ -2,6 +2,7 @@ import 'package:appuas/components/custom_ListTile.dart';
 import 'package:appuas/model/article_model.dart';
 import 'package:appuas/services/api_service.dart';
 import 'package:flutter/material.dart';
+import 'package:appuas/view/home_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,6 +29,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           "Widiasih Rambe",
           textAlign: TextAlign.center,
